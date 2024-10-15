@@ -22,3 +22,8 @@
    node-express-cli make:module
    ```
 
+## 執行
+1. 開發者模式
+    ```
+    npm run dev
+    ```
