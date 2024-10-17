@@ -84,8 +84,8 @@ void getAPInfo() {
   ssid = (const char*)objSrc["ssid"];
   password = (const char*)objSrc["password"];
   if (ssid == "" || password == "") { //default setting
-    objSrc["ssid"] = "cht5879";//"defaultAP";"DukeAp"
-    objSrc["password"] = "076995912";//"defaultPassword";"ddd54679"
+    objSrc["ssid"] = "your_ssid";//your_ssid
+    objSrc["password"] = "your_password";//your_password
     Serial.print("Not AP data, build new data and write:");
     Serial.println(eep.write(JSON.stringify(objSrc)));
   }
