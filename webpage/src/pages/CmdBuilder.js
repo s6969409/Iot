@@ -34,9 +34,10 @@ const FormListAdapter = ({ params }) => {
 export default function ({ dev, cmds, onChange }) {
   const cmdsDefault = {setPinValue:dev.cmds.getPinValue.map((p,i)=>{
     const {setPinValue} = JSON.parse(cmds??"{}")
+    const setP = setPinValue.find(sp=>sp.pin==p.pin)
     return {...p,
-      use:setPinValue != null && setPinValue[i] != null,
-      value:setPinValue != null && setPinValue[i] != null && !!(setPinValue[i].value^p.Inv),
+      use:setPinValue != null && setPinValue.every(sp=>sp.pin==p.pin),
+      value: setP != null && !!(setP.value^p.Inv)
     }
   })}
   const [form] = Form.useForm();
