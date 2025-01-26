@@ -10,7 +10,7 @@ export const injectStore = (_store) => {
   store = _store;
 };
 
-const BASE_URL = `${process.env.REACT_APP_SERVER_URL || 'http://localhost'}:${process.env.REACT_APP_SERVER_PORT || '3000'}`
+const BASE_URL = `${process.env.REACT_APP_SERVER_URL || `${window.location.protocol}//${window.location.hostname}`}:${process.env.REACT_APP_SERVER_PORT || '3000'}`
 const SYSTEM_NAME = process.env.REACT_APP_NAME || 'test';
 
 // eslint-disable-next-line import/no-anonymous-default-export
